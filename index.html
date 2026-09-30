@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SYNABRE — chien méchant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <svg class="svg-defs" aria-hidden="true" width="0" height="0">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+            result="goo"
+          />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+
+    <header class="site-header">
+      <a href="#top" class="brand" aria-label="SYNABRE — accueil">
+        <img
+          class="brand-logo"
+          src="assets/logo-synabre.png"
+          alt=""
+          width="44"
+          height="44"
+        />
+        <span class="brand-text">chien méchant</span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#oeuvres">Œuvres</a>
+        <a href="#expo">Expo</a>
+        <a href="#artiste">L'artiste</a>
+      </nav>
+      <button type="button" class="btn btn-red btn-pill" data-print-open>
+        Demander un print
+      </button>
+      <button type="button" class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-waves" aria-hidden="true">
+          <svg
+            class="wave-svg"
+            viewBox="0 0 1440 900"
+            preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path class="w w-blue" d="M0,0 C240,180 480,-40 720,120 C960,280 1200,40 1440,160 L1440,0 Z" />
+            <path class="w w-red" d="M0,80 C200,260 400,20 700,200 C1000,380 1200,100 1440,240 L1440,0 L0,0 Z" />
+            <path class="w w-yellow" d="M0,200 C280,60 520,340 780,160 C1040,-20 1280,260 1440,120 L1440,0 L0,0 Z" />
+            <path class="w w-cream" d="M0,340 C260,220 520,420 820,300 C1120,180 1300,400 1440,320 L1440,0 L0,0 Z" />
+            <path class="w w-black" d="M0,480 C280,600 540,400 820,560 C1080,700 1280,480 1440,620 L1440,900 L0,900 Z" />
+            <path class="w w-blue-2" d="M0,620 C240,720 500,560 760,700 C1020,840 1240,640 1440,760 L1440,900 L0,900 Z" />
+            <path class="w w-red-2" d="M0,760 C320,680 580,840 880,740 C1180,640 1320,820 1440,760 L1440,900 L0,900 Z" />
+          </svg>
+        </div>
+
+        <div class="hero-orb" aria-hidden="true">
+          <img
+            class="orb-logo"
+            src="assets/logo-synabre-hero.png"
+            alt=""
+            width="220"
+            height="220"
+          />
+        </div>
+
+        <div class="hero-inner">
+          <p class="badge">Peinture contemporaine — couleurs primaires</p>
+          <h1 id="hero-title" class="hero-title">
+            La couleur <span class="c-blue">en</span><br />
+            <span class="c-red">mouvement</span>
+          </h1>
+          <p class="hero-lead">
+            Des toiles aux formes organiques, peintes au bleu, rouge, jaune et
+            noir. Chaque œuvre est disponible en tirage d’art, sur simple
+            demande.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-blue btn-pill" href="#oeuvres">Voir les œuvres</a>
+            <button type="button" class="btn btn-ghost btn-pill" data-print-open>
+              Commander un print
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="oeuvres" class="works" aria-labelledby="works-title">
+        <div class="works-head">
+          <h2 id="works-title">Les œuvres</h2>
+          <p class="works-hint">Ouvrez une toile pour voir le mur et demander un tirage</p>
+        </div>
+
+        <div class="filters" role="tablist" aria-label="Filtrer les œuvres">
+          <button type="button" class="filter is-active" data-filter="all" role="tab" aria-selected="true">
+            Tout
+          </button>
+          <button type="button" class="filter" data-filter="peinture" role="tab" aria-selected="false">
+            Peinture
+          </button>
+          <button type="button" class="filter" data-filter="dessin" role="tab" aria-selected="false">
+            Dessins
+          </button>
+        </div>
+
+        <div class="works-grid" id="works-grid"></div>
+      </section>
+
+      <section id="expo" class="expo" aria-labelledby="expo-title">
+        <div class="expo-card">
+          <p class="expo-kicker">Prochaine expo</p>
+          <h2 id="expo-title">SYNABRE — 8, 9, 10 août</h2>
+          <p class="expo-meta">Vernissage le 8 · 18h–21h · 4 rue Beffroy, Rouen</p>
+          <p>
+            Trois jours d’accrochage : toiles récentes, éditions limitées, et
+            le poster original en edition.
+          </p>
+          <a class="btn btn-blue btn-pill" href="#contact-note">Noter la date</a>
+        </div>
+        <aside class="expo-aside" aria-label="Agenda">
+          <div class="expo-item">
+            <span class="expo-date">Août 2026</span>
+            <span>Exposition SYNABRE — Rouen</span>
+          </div>
+          <div class="expo-item">
+            <span class="expo-date">Sur demande</span>
+            <span>Visite atelier · tirages signés</span>
+          </div>
+          <div class="expo-item">
+            <span class="expo-date">Instagram</span>
+            <span>Process & accrochages</span>
+          </div>
+        </aside>
+      </section>
+
+      <section id="artiste" class="artist" aria-labelledby="artist-title">
+        <div class="artist-copy">
+          <h2 id="artist-title">L’artiste</h2>
+          <p>
+            Sous le nom <em>chien méchant</em>, SYNABRE peint des formes qui
+            respirent : des blobs, des vagues, des courbes qui s’entrechoquent
+            en bleu, rouge, jaune et noir. Une peinture directe, joyeuse et
+            sans détour, entre héritage des couleurs primaires et énergie des
+            affiches des années 70.
+          </p>
+          <p>
+            Chaque toile naît d’un geste simple : une forme, une couleur, un
+            équilibre. Les tirages permettent de vivre ces œuvres à la maison,
+            même quand l’original a trouvé son mur.
+          </p>
+          <p id="contact-note" class="artist-note">
+            Contact commandes :
+            <a href="mailto:prints@synabre.art">prints@synabre.art</a>
+          </p>
+        </div>
+        <div class="blob blob-blue-side" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a href="#top" class="brand">
+        <img
+          class="brand-logo"
+          src="assets/logo-synabre.png"
+          alt=""
+          width="36"
+          height="36"
+        />
+        <span class="brand-text">chien méchant</span>
+      </a>
+      <nav aria-label="Pied de page">
+        <a href="#oeuvres">Œuvres</a>
+        <a href="#expo">Expo</a>
+        <a href="#artiste">L’artiste</a>
+      </nav>
+      <span class="copy">© 2026 SYNABRE — Tous droits réservés</span>
+    </footer>
+
+    <!-- Fiche œuvre + aperçu mur -->
+    <dialog class="work-dialog" id="work-dialog" aria-labelledby="work-dialog-title">
+      <div class="work-sheet">
+        <button type="button" class="dialog-close work-sheet-close" aria-label="Fermer" data-close-work>
+          ×
+        </button>
+
+        <div class="wall-preview" id="wall-preview">
+          <div class="wall-frame">
+            <div class="wall-art" id="wall-art"></div>
+          </div>
+          <p class="wall-caption">Aperçu mur · format <span id="wall-format-label">50 × 70</span></p>
+        </div>
+
+        <div class="work-sheet-copy">
+          <p class="status-pill" id="work-status">—</p>
+          <h2 id="work-dialog-title">—</h2>
+          <p class="work-sheet-meta" id="work-dialog-meta">—</p>
+          <p class="work-sheet-desc" id="work-dialog-desc">—</p>
+
+          <fieldset class="format-picker">
+            <legend>Choisir un format</legend>
+            <label class="format-option">
+              <input type="radio" name="sheet-format" value="30x40" />
+              <span>30 × 40 · <strong>45&nbsp;€</strong></span>
+            </label>
+            <label class="format-option">
+              <input type="radio" name="sheet-format" value="50x70" checked />
+              <span>50 × 70 · <strong>85&nbsp;€</strong></span>
+            </label>
+            <label class="format-option">
+              <input type="radio" name="sheet-format" value="70x100" />
+              <span>70 × 100 · <strong>140&nbsp;€</strong></span>
+            </label>
+          </fieldset>
+
+          <p class="quote-line">
+            Total indicatif : <strong id="quote-price">85&nbsp;€</strong>
+          </p>
+
+          <div class="work-sheet-actions">
+            <button type="button" class="btn btn-yellow btn-pill" id="sheet-print-btn">
+              Demander ce print
+            </button>
+            <button type="button" class="btn btn-ghost btn-pill" data-close-work>
+              Fermer
+            </button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Formulaire demande -->
+    <dialog class="print-dialog" id="print-dialog" aria-labelledby="dialog-title">
+      <form class="print-form" id="print-form" novalidate>
+        <header class="dialog-head">
+          <h2 id="dialog-title">Demander un print</h2>
+          <button type="button" class="dialog-close" aria-label="Fermer" data-close>
+            ×
+          </button>
+        </header>
+
+        <div class="dialog-preview">
+          <div class="preview-art" id="preview-art" aria-hidden="true"></div>
+          <div>
+            <p class="preview-title" id="preview-title">Œuvre au choix</p>
+            <p class="preview-meta" id="preview-meta">Indiquez l’œuvre souhaitée</p>
+          </div>
+        </div>
+
+        <label>
+          Nom
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+        <label>
+          Œuvre
+          <select name="artworkId" id="artwork-select" required></select>
+        </label>
+        <label>
+          Format
+          <select name="format" id="format-select" required>
+            <option value="30x40">30 × 40 cm — 45 €</option>
+            <option value="50x70" selected>50 × 70 cm — 85 €</option>
+            <option value="70x100">70 × 100 cm — 140 €</option>
+          </select>
+        </label>
+        <p class="form-quote">
+          Estimation : <strong id="form-price">85&nbsp;€</strong>
+          <span class="form-quote-note">· hors cadre &amp; port</span>
+        </p>
+        <label>
+          Message
+          <textarea
+            name="message"
+            rows="3"
+            placeholder="Cadre, délai, quantité…"
+          ></textarea>
+        </label>
+
+        <input type="hidden" name="_subject" value="Demande de print — SYNABRE" />
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" />
+
+        <div class="dialog-actions">
+          <button type="button" class="btn btn-ghost btn-pill" data-close>
+            Annuler
+          </button>
+          <button type="submit" class="btn btn-yellow btn-pill" id="submit-btn">
+            Envoyer la demande
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="js/app.js" type="module"></script>
+  </body>
+</html>
