@@ -616,11 +616,6 @@ textarea {
   font-weight: 500;
 }
 
-.artist-copy em {
-  font-style: normal;
-  font-family: var(--font-display);
-}
-
 .artist-note a {
   color: var(--blue);
   font-weight: 700;

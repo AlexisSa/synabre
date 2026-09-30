@@ -1,6 +1,6 @@
 # SYNABRE — site vitrine (proto)
 
-Site vitrine pour **chien méchant** / SYNABRE.
+Site vitrine pour l’artiste peintre **SYNABRE**.
 
 ## Lancer
 
