@@ -385,11 +385,36 @@ function initNav() {
   });
 }
 
+function initHeaderLogoSpin() {
+  const hero = document.querySelector(".hero");
+  const logos = document.querySelectorAll(".site-header .brand-logo");
+  if (!hero || !logos.length) return;
+
+  const setSpinning = (pastHero) => {
+    logos.forEach((logo) => logo.classList.toggle("is-spinning", pastHero));
+  };
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      // Tourne uniquement quand la hero n'est plus visible
+      setSpinning(!entry.isIntersecting);
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-64px 0px 0px 0px", // hauteur approx. du header sticky
+    }
+  );
+
+  observer.observe(hero);
+}
+
 function init() {
   renderWorks();
   fillArtworkSelect();
   initFilters();
   initNav();
+  initHeaderLogoSpin();
   updateFormPrice();
 
   document.querySelectorAll("[data-print-open]").forEach((btn) => {

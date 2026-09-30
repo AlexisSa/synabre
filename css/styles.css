@@ -84,23 +84,41 @@ textarea {
   line-height: 1;
 }
 
-.brand-logo {
-  width: 44px;
-  height: 44px;
+.brand-logo-wrap {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  object-fit: cover;
+  overflow: hidden;
   flex-shrink: 0;
-  border: 2px solid var(--ink);
-  animation: spin 18s linear infinite;
+  background: #fff;
+}
+
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.14);
+  will-change: transform;
+}
+
+.brand-logo.is-spinning {
+  animation: spinHeader 18s linear infinite;
 }
 
 .brand-text {
   line-height: 1;
 }
 
+.site-footer .brand-logo-wrap {
+  width: 40px;
+  height: 40px;
+}
+
 .site-footer .brand-logo {
-  width: 36px;
-  height: 36px;
+  animation: none !important;
+  transform: scale(1.14);
 }
 
 .nav {
@@ -262,22 +280,44 @@ textarea {
 .hero-orb {
   position: absolute;
   z-index: 1;
-  top: 12%;
-  right: 8%;
-  width: min(28vw, 220px);
+  top: 14%;
+  right: 9%;
+  width: min(30vw, 240px);
   aspect-ratio: 1;
   pointer-events: none;
   animation: float 7s ease-in-out infinite;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
 }
 
 .orb-logo {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--ink);
-  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.25);
-  animation: spin 22s linear infinite;
+  object-position: center;
+  display: block;
+  transform-origin: center;
+  animation: spinOrb 22s linear infinite;
+}
+
+@keyframes spinOrb {
+  from {
+    transform: rotate(0deg) scale(1.16);
+  }
+  to {
+    transform: rotate(360deg) scale(1.16);
+  }
+}
+
+@keyframes spinHeader {
+  from {
+    transform: rotate(0deg) scale(1.14);
+  }
+  to {
+    transform: rotate(360deg) scale(1.14);
+  }
 }
 
 .hero-inner {
@@ -1011,12 +1051,6 @@ textarea {
 
 .toast.is-visible {
   transform: translateX(-50%) translateY(0);
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @keyframes float {
